@@ -68,7 +68,6 @@ let todos = document.querySelector('#todos')
 let acessorios = document.querySelector('#acessorios')
 let calcados = document.querySelector('#calcados')
 let camisetas = document.querySelector('#camisetas')
-let pesquisa = document.querySelector('.pesquisa')
 let main = document.querySelector('main')
 let txtNav = document.querySelector('.txtNav')
 let txtDentro = document.querySelector('.txtDentro')
@@ -77,33 +76,34 @@ let divLateral = document.querySelector('#lateral')
 let prodDuplicado = document.querySelector('.prodDuplicado')
 let carrinhoBottom = document.querySelector('.carrinhoBottom')
 let ulProdutos = document.createElement('ul')
+let ulAcessorio = document.createElement('ul')
 
 //
 divProd.appendChild(ulProdutos)
 
 function criarCards(database){
-    for (let i = 0; i < database.length; i++){
+   
         let li = document.createElement('li')
-        li.id = database[i].id
+        li.id = database[2].id
         let img = document.createElement('img')
-        img.src = database[i].img
+        img.src = database[2].img
         img.classList.add('cardImg')
         let tag = document.createElement('span')
-        tag.innerHTML = database[i].tag
+        tag.innerHTML = database[2].tag
         tag.classList.add('cardTag')
         let nomeProd = document.createElement('span')
-        nomeProd.innerText = database[i].nameItem
+        nomeProd.innerText = database[2].nameItem
         nomeProd.classList.add('cardNome')
         let descricaoProd = document.createElement('span')
-        descricaoProd.innerText = database[i].description
+        descricaoProd.innerText = database[2].description
         descricaoProd.classList.add('cardDisc')
         let precoProd = document.createElement('span')
-        precoProd.innerText = `R$${database[i].value},00`
+        precoProd.innerText = `R$${database[2].value},00`
         precoProd.classList.add('cardPreco')
         let addCarrinho = document.createElement('span')
-        addCarrinho.innerText = database[i].addCart
+        addCarrinho.innerText = database[2].addCart
         addCarrinho.classList.add('cardAdd')
-        addCarrinho.id = database[i].id
+        addCarrinho.id = database[2].id
 
         ulProdutos.appendChild(li)
         li.appendChild(img)
@@ -113,7 +113,7 @@ function criarCards(database){
         li.appendChild(precoProd)
         li.appendChild(addCarrinho)
 
-    }
+  
 }
 criarCards(database)
 
@@ -202,3 +202,4 @@ function verificaProd(id){
         return true
      }
 } 
+

@@ -10,26 +10,6 @@ const database = [
       tag: ["Camisetas"],
     },
     {
-      id: 2,
-      img: "../img/gorro.svg",
-      nameItem: "Black Hat",
-      description:
-        "O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...",
-      value: 100,
-      addCart: "Adicionar ao carrinho",
-      tag: ["Acessórios"],
-    },
-    {
-      id: 3,
-      img: "../img/mascara.svg",
-      nameItem: "Mask",
-      description:
-        "Esta máscara facial durável é feita de duas camadas de tecido tratado e possui presilhas...",
-      value: 40,
-      addCart: "Adicionar ao carrinho",
-      tag: ["Acessórios"],
-    },
-    {
       id: 4,
       img: "../img/camiseta_preta.svg",
       nameItem: "T-Shirt",
@@ -68,7 +48,6 @@ let todos = document.querySelector('#todos')
 let acessorios = document.querySelector('#acessorios')
 let calcados = document.querySelector('#calcados')
 let camisetas = document.querySelector('#camisetas')
-let pesquisa = document.querySelector('.pesquisa')
 let main = document.querySelector('main')
 let txtNav = document.querySelector('.txtNav')
 let txtDentro = document.querySelector('.txtDentro')
@@ -202,3 +181,4 @@ function verificaProd(id){
         return true
      }
 } 
+

@@ -9,56 +9,7 @@ const database = [
       addCart: "Adicionar ao carrinho",
       tag: ["Camisetas"],
     },
-    {
-      id: 2,
-      img: "../img/gorro.svg",
-      nameItem: "Black Hat",
-      description:
-        "O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...",
-      value: 100,
-      addCart: "Adicionar ao carrinho",
-      tag: ["Acessórios"],
-    },
-    {
-      id: 3,
-      img: "../img/mascara.svg",
-      nameItem: "Mask",
-      description:
-        "Esta máscara facial durável é feita de duas camadas de tecido tratado e possui presilhas...",
-      value: 40,
-      addCart: "Adicionar ao carrinho",
-      tag: ["Acessórios"],
-    },
-    {
-      id: 4,
-      img: "../img/camiseta_preta.svg",
-      nameItem: "T-Shirt",
-      description:
-        "Esta t-shirt é imprescindível no seu guarda-roupa, combinando o caimento intemporal de...",
-      value: 100,
-      addCart: "Adicionar ao carrinho",
-      tag: ["Camisetas"],
-    },
-    {
-      id: 5,
-      img: "../img/camiseta_branca.svg",
-      nameItem: "Short-Sleeve T-Shirt",
-      description:
-        "Agora você encontrou a camiseta básica do seu guarda-roupa. É feito de um mais grosso...",
-      value: 100,
-      addCart: "Adicionar ao carrinho",
-      tag: ["Camisetas"],
-    },
-    {
-      id: 6,
-      img: "../img/moletom.svg",
-      nameItem: "Champion Packable Jacket",
-      description:
-        "Proteja-se dos elementos com esta jaqueta embalável Champion. Esta jaqueta de poliést...",
-      value: 100,
-      addCart: "Adicionar ao carrinho",
-      tag: ["Camisetas"],
-    },
+  
 ]
 let contador = 0 
 let preco = 0
@@ -68,7 +19,6 @@ let todos = document.querySelector('#todos')
 let acessorios = document.querySelector('#acessorios')
 let calcados = document.querySelector('#calcados')
 let camisetas = document.querySelector('#camisetas')
-let pesquisa = document.querySelector('.pesquisa')
 let main = document.querySelector('main')
 let txtNav = document.querySelector('.txtNav')
 let txtDentro = document.querySelector('.txtDentro')
@@ -86,33 +36,14 @@ function criarCards(database){
         let li = document.createElement('li')
         li.id = database[i].id
         let img = document.createElement('img')
-        img.src = database[i].img
+        img.src = 'https://cdn-icons-png.flaticon.com/512/91/91453.png'
         img.classList.add('cardImg')
-        let tag = document.createElement('span')
-        tag.innerHTML = database[i].tag
-        tag.classList.add('cardTag')
         let nomeProd = document.createElement('span')
-        nomeProd.innerText = database[i].nameItem
+        nomeProd.innerText = 'Nada por aqui...'
         nomeProd.classList.add('cardNome')
-        let descricaoProd = document.createElement('span')
-        descricaoProd.innerText = database[i].description
-        descricaoProd.classList.add('cardDisc')
-        let precoProd = document.createElement('span')
-        precoProd.innerText = `R$${database[i].value},00`
-        precoProd.classList.add('cardPreco')
-        let addCarrinho = document.createElement('span')
-        addCarrinho.innerText = database[i].addCart
-        addCarrinho.classList.add('cardAdd')
-        addCarrinho.id = database[i].id
-
         ulProdutos.appendChild(li)
         li.appendChild(img)
-        li.appendChild(tag)
         li.appendChild(nomeProd)
-        li.appendChild(descricaoProd)
-        li.appendChild(precoProd)
-        li.appendChild(addCarrinho)
-
     }
 }
 criarCards(database)
@@ -202,3 +133,4 @@ function verificaProd(id){
         return true
      }
 } 
+
