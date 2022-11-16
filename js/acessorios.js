@@ -1,15 +1,5 @@
 const database = [
   {
-    id: 1,
-    img: "img/jaqueta.svg",
-    nameItem: "Lightweight Jacket",
-    description:
-      "Adicione um pouco de energia ao seu guarda-roupa de inverno com esta jaqueta vibrante...",
-    value: 100,
-    addCart: "Adicionar ao carrinho",
-    tag: ["Camisetas"],
-  },
-  {
     id: 2,
     img: "img/gorro.svg",
     nameItem: "Black Hat",
@@ -29,36 +19,7 @@ const database = [
     addCart: "Adicionar ao carrinho",
     tag: ["Acessórios"],
   },
-  {
-    id: 4,
-    img: "img/camiseta_preta.svg",
-    nameItem: "T-Shirt",
-    description:
-      "Esta t-shirt é imprescindível no seu guarda-roupa, combinando o caimento intemporal de...",
-    value: 100,
-    addCart: "Adicionar ao carrinho",
-    tag: ["Camisetas"],
-  },
-  {
-    id: 5,
-    img: "img/camiseta_branca.svg",
-    nameItem: "Short-Sleeve T-Shirt",
-    description:
-      "Agora você encontrou a camiseta básica do seu guarda-roupa. É feito de um mais grosso...",
-    value: 100,
-    addCart: "Adicionar ao carrinho",
-    tag: ["Camisetas"],
-  },
-  {
-    id: 6,
-    img: "img/moletom.svg",
-    nameItem: "Champion Packable Jacket",
-    description:
-      "Proteja-se dos elementos com esta jaqueta embalável Champion. Esta jaqueta de poliést...",
-    value: 100,
-    addCart: "Adicionar ao carrinho",
-    tag: ["Camisetas"],
-  },
+
 ]
 let contador = 0 
 let preco = 0
@@ -84,28 +45,28 @@ let ulAcessorio = document.createElement('ul')
 divProd.appendChild(ulProdutos)
 
 function criarCards(database){
-   
+   for (let i = 0; i < database.length; i++){
         let li = document.createElement('li')
         li.classList.add('lista')
         let img = document.createElement('img')
-        img.src = database[2].img
+        img.src = database[i].img
         img.classList.add('cardImg')
         let tag = document.createElement('span')
-        tag.innerHTML = database[2].tag
+        tag.innerHTML = database[i].tag
         tag.classList.add('cardTag')
         let nomeProd = document.createElement('span')
-        nomeProd.innerText = database[2].nameItem
+        nomeProd.innerText = database[i].nameItem
         nomeProd.classList.add('cardNome')
         let descricaoProd = document.createElement('span')
-        descricaoProd.innerText = database[2].description
+        descricaoProd.innerText = database[i].description
         descricaoProd.classList.add('cardDisc')
         let precoProd = document.createElement('span')
-        precoProd.innerText = `R$${database[2].value},00`
+        precoProd.innerText = `R$${database[i].value},00`
         precoProd.classList.add('cardPreco')
         let addCarrinho = document.createElement('span')
-        addCarrinho.innerText = database[2].addCart
+        addCarrinho.innerText = database[i].addCart
         addCarrinho.classList.add('cardAdd')
-        addCarrinho.id = database[2].id
+        addCarrinho.id = database[i].id
 
         ulProdutos.appendChild(li)
         li.appendChild(img)
@@ -114,7 +75,7 @@ function criarCards(database){
         li.appendChild(descricaoProd)
         li.appendChild(precoProd)
         li.appendChild(addCarrinho)
-
+   }
   
 }
 criarCards(database)
