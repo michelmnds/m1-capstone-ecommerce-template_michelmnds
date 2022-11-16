@@ -19,6 +19,8 @@ let todos = document.querySelector('#todos')
 let acessorios = document.querySelector('#acessorios')
 let calcados = document.querySelector('#calcados')
 let camisetas = document.querySelector('#camisetas')
+let pesquisa = document.querySelector('#pesquisa')
+let listasDoDOM = document.getElementsByClassName('lista')
 let main = document.querySelector('main')
 let txtNav = document.querySelector('.txtNav')
 let txtDentro = document.querySelector('.txtDentro')
@@ -34,7 +36,7 @@ divProd.appendChild(ulProdutos)
 function criarCards(database){
     for (let i = 0; i < database.length; i++){
         let li = document.createElement('li')
-        li.id = database[i].id
+        li.classList.add('lista')
         let img = document.createElement('img')
         img.src = 'https://cdn-icons-png.flaticon.com/512/91/91453.png'
         img.classList.add('cardImg')

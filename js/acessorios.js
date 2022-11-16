@@ -68,6 +68,8 @@ let todos = document.querySelector('#todos')
 let acessorios = document.querySelector('#acessorios')
 let calcados = document.querySelector('#calcados')
 let camisetas = document.querySelector('#camisetas')
+let pesquisa = document.querySelector('#pesquisa')
+let listasDoDOM = document.getElementsByClassName('lista')
 let main = document.querySelector('main')
 let txtNav = document.querySelector('.txtNav')
 let txtDentro = document.querySelector('.txtDentro')
@@ -84,7 +86,7 @@ divProd.appendChild(ulProdutos)
 function criarCards(database){
    
         let li = document.createElement('li')
-        li.id = database[2].id
+        li.classList.add('lista')
         let img = document.createElement('img')
         img.src = database[2].img
         img.classList.add('cardImg')
@@ -203,3 +205,19 @@ function verificaProd(id){
      }
 } 
 
+let pesquisaE = pesquisa.addEventListener('keyup', (event) => {
+  let {value} = event.target
+
+  let searchQuery = value.toLowerCase()
+
+  for (let nameElement of listasDoDOM){
+    let name = nameElement.textContent.toLowerCase()
+
+    if (name.includes(searchQuery)){
+      nameElement.style.display = ""
+    }
+    else{
+      nameElement.style.display = "none"
+    }
+  }
+})
